@@ -18,4 +18,8 @@ export class CatalogueComponent implements OnInit {
     get catalogue(): PokemonShort[] {
         return this.catalogueService.Catalogue();
     }
+
+    public handlePokemonClicked(pokemon: PokemonShort): void {
+        console.log(pokemon.name, "was caught!");
+    }
 }
