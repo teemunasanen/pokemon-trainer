@@ -13,7 +13,7 @@ import { TrainerPage } from './trainer/trainer.page';
 @NgModule({
   declarations: [
     AppComponent,
-    CatalogueComponent
+    CatalogueComponent,
     TrainerListComponent,
     TrainerPage,
     LandingPage,

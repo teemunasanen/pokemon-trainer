@@ -3,7 +3,7 @@ import { PokemonShort } from '../models/pokemon-list.model';
 import { CatalogueService } from '../services/catalogue.service';
 
 @Component({
-    selector: 'app-catalogue',
+    selector: 'app-catalogue-comp',
     templateUrl: './catalogue.component.html',
     styleUrls: ['./catalogue.component.css']
 })
