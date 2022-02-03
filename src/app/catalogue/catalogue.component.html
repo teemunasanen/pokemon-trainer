@@ -1,6 +1,6 @@
-<div *ngFor="let pokemon of catalogue">
-    <img src="{{ pokemon.sprite }}">
-    <span>
-        <br />name: {{ pokemon.name }}
-        <br />type: {{ pokemon.type }}</span>
-</div>
+<ul>
+    <app-catalogue-item *ngFor="let pokemon of catalogue" 
+        (clicked)="handlePokemonClicked($event)" 
+        [pokemon]="pokemon">
+    </app-catalogue-item>
+</ul>

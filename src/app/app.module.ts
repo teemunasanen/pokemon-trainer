@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { TrainerListComponent } from './trainer-list/trainer-list.component';
+import { CatalogueItemComponent } from './catalogue-item/catalogue-item.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LandingPage } from './landing/landing.page';
 import { CataloguePage } from './catalogue/catalogue.page';
@@ -16,11 +17,12 @@ import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-    CatalogueComponent,
     TrainerListComponent,
     TrainerPage,
     LandingPage,
     CataloguePage,
+    CatalogueComponent,
+    CatalogueItemComponent,
     LoginFormComponent
   ],
   imports: [

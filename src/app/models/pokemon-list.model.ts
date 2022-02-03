@@ -20,6 +20,7 @@ export interface PokemonShort {
     name: string;
     sprite: string;
     type: string;
+    caught: boolean;
 }
 
 export interface Sprites {
