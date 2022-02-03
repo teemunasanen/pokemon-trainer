@@ -9,15 +9,17 @@ import { CataloguePage } from './catalogue/catalogue.page';
 import { LandingPage } from './landing/landing.page';
 import { TrainerListComponent } from './trainer-list/trainer-list.component';
 import { TrainerPage } from './trainer/trainer.page';
+import { CatalogueItemComponent } from './catalogue-item/catalogue-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CatalogueComponent,
     TrainerListComponent,
     TrainerPage,
     LandingPage,
-    CataloguePage
+    CataloguePage,
+    CatalogueComponent,
+    CatalogueItemComponent
   ],
   imports: [
     BrowserModule,
