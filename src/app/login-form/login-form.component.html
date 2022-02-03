@@ -1,9 +1,23 @@
 <h1>Login here:</h1>
 
-<form>
-  <fieldset>
-    <label for="trainer-name">Trainer-name</label>
-    <input type="text" id="trainer-name" placeholder="Pokémon Catcher" />
+<form #loginForm="ngForm" (ngSubmit)="onLoginSubmit(loginForm)">
+  <fieldset >
+    <label for="trainer">Trainer name: </label>
+    <input type="text"
+    [ngClass]="{'is-valid': trainer.valid, 'is-invalid': (trainer.invalid && (trainer.dirty || trainer.touched))}"
+    id="trainer"
+    name="trainer"
+    ngModel
+    #trainer="ngModel"
+    required
+    minlength="3"
+     placeholder="Pokémon Catcher" />
+
+    <div *ngIf="trainer.errors && trainer.invalid && ( trainer.dirty || trainer.touched )">
+      <p *ngIf="trainer.errors?.['required']">The trainer name is required</p>
+      <p *ngIf="trainer.errors?.['minlength']">The trainer name minimum length is 3</p>
+    </div>
   </fieldset>
-  <button>Login</button>
+  <br>
+  <button type="submit" [disabled]="loginForm.invalid">Login</button>
 </form>
