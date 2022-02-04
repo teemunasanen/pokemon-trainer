@@ -29,5 +29,7 @@ export class TrainerService {
     this._pokemon = pokemon;
   }
 
-  constructor() { }
+  constructor() {
+    this._trainer = sessionStorage.getItem(TRAINER_KEY) || "";
+  }
 }
