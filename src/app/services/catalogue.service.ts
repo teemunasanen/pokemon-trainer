@@ -1,13 +1,12 @@
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { PokemonShort, PokemonList, PokemonListObject, PokemonRaw } from "../models/pokemon-list.model";
+import { PokemonShort, PokemonListObject, PokemonRaw } from "../models/pokemon-list.model";
 
 @Injectable({
     providedIn: 'root'
 })
 export class CatalogueService {
     private _catalogue: PokemonShort[] = []
-    private _error: string = '';
 
     constructor(private readonly http: HttpClient) {
     }
@@ -19,9 +18,6 @@ export class CatalogueService {
                     for (let i = 0; i < catalogueObject.results.length; i++) {
                         this.fetchPokemon(catalogueObject.results[i].url);
                     }
-                },
-                error: (error) => {
-                    this._error = error.message;
                 }
             })
     }
@@ -32,7 +28,7 @@ export class CatalogueService {
                 next: (pokemon) => {
                     const newPokemon: PokemonShort = {
                         name: pokemon.name,
-                        sprite: pokemon.sprites.front_default,
+                        sprite: pokemon.sprites.versions["generation-vii"]["ultra-sun-ultra-moon"].front_default,
                         type: pokemon.types[0].type.name,
                         caught: false
                     };
@@ -43,9 +39,5 @@ export class CatalogueService {
 
     public Catalogue(): PokemonShort[] {
         return this._catalogue;
-    }
-
-    public error(): string {
-        return this._error;
     }
 }
