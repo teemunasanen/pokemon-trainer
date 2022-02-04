@@ -1,7 +1,19 @@
-<li class="catalogue-item">
-        <img class="item-sprite" src="{{ pokemon?.sprite }}">
-        <span>{{ pokemon?.name }}</span>
-        <span><br />{{ pokemon?.type }}</span>
-        <button (click)="onPokemonClicked()">Catch!</button>
-    <div class="item-backdrop"></div>
-</li>
+<div class="container">
+  <div class="card" style="width: 18rem">
+    <img class="card-img-top" src="{{ pokemon?.sprite }}" />
+    <div class="card-body">
+      <li class="list-group-item">
+        <h5 class="card-title">
+          <span>{{ pokemon?.name }}</span>
+        </h5>
+        <p class="card-text">
+          <span><br />{{ pokemon?.type }}</span>
+        </p>
+        <button class="btn btn-primary" (click)="onPokemonClicked()">
+          Catch!
+        </button>
+      </li>
+    </div>
+  </div>
+</div>
+<div class="item-backdrop"></div>

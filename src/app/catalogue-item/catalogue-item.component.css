@@ -1,13 +1,7 @@
-.catalogue-item {
-    background: rgb(183, 232, 255);
-    border-radius: 10px;
-    width: 256px;
-    height: 370px;
+.card-img-top{
+    width: 100px;
 }
 
-.item-sprite {
-    width: 100%;
-}
 
 /* .item-backdrop {
     position: relative;
