@@ -18,5 +18,7 @@ export class TrainerService {
     this._trainer = trainer;
   }
 
-  constructor() { }
+  constructor() {
+    this._trainer = sessionStorage.getItem(TRAINER_KEY) || "";
+  }
 }
