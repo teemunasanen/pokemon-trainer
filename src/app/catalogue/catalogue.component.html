@@ -1,5 +1,5 @@
 <ul>
-    <app-catalogue-item *ngFor="let pokemon of catalogue" 
+    <app-catalogue-item *ngFor="let pokemon of _catalogue" 
         (clicked)="handlePokemonClicked($event)" 
         [pokemon]="pokemon">
     </app-catalogue-item>
