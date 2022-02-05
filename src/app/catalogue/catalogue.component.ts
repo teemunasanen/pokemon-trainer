@@ -17,7 +17,6 @@ export class CatalogueComponent implements OnInit {
 
     ngOnInit(): void {
         const storedCatalogue: string | null = sessionStorage.getItem("catalogue");
-        console.log(storedCatalogue);
         if (storedCatalogue === null) {
             this.catalogueService.fetchCatalogue(151);
             this._catalogue = this.catalogueService.Catalogue();
@@ -33,7 +32,6 @@ export class CatalogueComponent implements OnInit {
     }
 
     public handlePokemonClicked(pokemon: PokemonShort): void {
-        console.log(pokemon.name, "was caught!");
         let currentPokemon = this.trainerService.getPokemon();
         currentPokemon.push({name: pokemon.name, sprite: pokemon.sprite, type: pokemon.type, deleted: false});
         this.trainerService.setPokemon(currentPokemon);
