@@ -16,11 +16,12 @@ export class LoginFormComponent implements OnInit {
 
 
     ngOnInit(): void {
+        this.trainerService.fetchTrainers();
     }
 
     public onLoginSubmit(form: NgForm): void {
         const { trainer } = form.value;
-        this.trainerService.trainer = trainer;
+        this.trainerService.username = trainer;
         this.router.navigateByUrl("/catalogue");
     }
 

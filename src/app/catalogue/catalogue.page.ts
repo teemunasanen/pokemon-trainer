@@ -7,8 +7,8 @@ import { TrainerService } from "../services/trainer.service";
 })
 export class CataloguePage implements OnInit {
 
-    get trainer(): string{
-        return this.trainerService.trainer;
+    get username(): string{
+        return this.trainerService.username;
     }
 
     constructor(
