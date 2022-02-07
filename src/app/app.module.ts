@@ -15,11 +15,13 @@ import { TrainerPage } from './trainer/trainer.page';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { TrainerListItemComponent } from './trainer-list-item/trainer-list-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TrainerListComponent,
+    TrainerListItemComponent,
     TrainerPage,
     LandingPage,
     CataloguePage,
