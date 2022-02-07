@@ -25,7 +25,7 @@ export class TrainerService {
     return this._trainer
   }
 
-  public getPokemon(): TrainerPokemon[] {
+  get pokemons(): TrainerPokemon[] {
     return this._trainer.pokemon;
   }
 

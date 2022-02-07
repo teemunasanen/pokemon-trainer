@@ -20,11 +20,19 @@ export class CatalogueComponent implements OnInit {
         if (storedCatalogue === null) {
             this.catalogueService.fetchCatalogue(151);
             this._catalogue = this.catalogueService.Catalogue();
+            // console.log(this.trainerService.pokemons)
+            // this._catalogue.forEach(pokemon => {
+            //     for (const caught of this.trainerService.pokemons) { 
+            //         if (pokemon.name === caught.name)
+            //             pokemon.caught = true;
+            // }})
+            // console.log(this._catalogue)
         }
         else 
         {
             this._catalogue = JSON.parse(storedCatalogue);
         }
+        
     }
 
     // getCatalogue() {
@@ -32,13 +40,15 @@ export class CatalogueComponent implements OnInit {
     // }
 
     public handlePokemonClicked(pokemon: PokemonShort): void {
-        let currentPokemon = this.trainerService.getPokemon();
-        this._catalogue.forEach(item => {
-            if (item.name === pokemon.name) 
+        if (!pokemon.caught) {
+            let currentPokemons = this.trainerService.pokemons;
+            this._catalogue.forEach(item => {
+                if (item.name === pokemon.name) 
                 item.caught = true;
             })
-        sessionStorage.setItem("catalogue", JSON.stringify(this._catalogue));
-        currentPokemon.push({name: pokemon.name, sprite: pokemon.sprite, type: pokemon.type, deleted: false});
-        this.trainerService.setPokemon(currentPokemon);
+            sessionStorage.setItem("catalogue", JSON.stringify(this._catalogue));
+            currentPokemons.push({name: pokemon.name, sprite: pokemon.sprite, type: pokemon.type, deleted: false});
+            this.trainerService.setPokemon(currentPokemons);
+        }
     }
 }
