@@ -8,15 +8,12 @@ import { Router } from '@angular/router';
 const TRAINER_KEY = 'trainer';
 const URL = environment.trainerAPI;
 const API_KEY = environment.trainerAPI_KEY;
+const headers = { "content-type": "application/json", "X-API-Key": API_KEY }
 
 @Injectable({
   providedIn: 'root'
 })
 export class TrainerService {
-  // private trainers: Trainer[] = [];
-  // private error: string = ''
-  // private _username: string = "";
-  // private _pokemon: TrainerPokemon[] = [];
 
   private _trainer: Trainer = JSON.parse(localStorage.getItem(TRAINER_KEY) || "{}");
 
@@ -28,16 +25,12 @@ export class TrainerService {
     return this._trainer
   }
 
-  // set username(username: string) {
-  //   sessionStorage.setItem(TRAINER_KEY, username)
-  //   this._username = username;
-  // }
-
-  public getPokemon(): TrainerPokemon[] {
+  get pokemons(): TrainerPokemon[] {
     return this._trainer.pokemon;
   }
 
   public setPokemon(pokemon: TrainerPokemon[]) {
+    this.updatePokemon(pokemon);
     this._trainer = { id: this._trainer.id, username: this._trainer.username, pokemon: pokemon };
     localStorage.setItem(TRAINER_KEY, JSON.stringify(this._trainer));
   }
@@ -71,12 +64,14 @@ export class TrainerService {
             }
           }
           this.createNewTrainer(username.toLowerCase());
+        },
+        error: (error) => {
+          console.log(error.message);
         }
       })
   }
 
   public createNewTrainer(username: string): void {
-    const headers = { "content-type": "application/json", "X-API-Key": API_KEY }
     const body = { "username": username, "pokemon": [] }
 
     this.http.post<Trainer>(URL, body, { headers }).subscribe({
@@ -84,7 +79,21 @@ export class TrainerService {
         localStorage.setItem(TRAINER_KEY, JSON.stringify(trainer));
         this._trainer = trainer;
         this.router.navigateByUrl("/catalogue");
+      },
+      error: (error) => {
+        console.log(error.message);
       }
     })
+  }
+
+  public updatePokemon(pokemon: TrainerPokemon[]): void {
+    const body = { "pokemon": pokemon }
+
+    this.http.patch<Trainer>(`${URL}/${this._trainer.id}`, body, { headers }).subscribe({
+      error: (error) => {
+        console.log(error.message);
+      }
+    })
+
   }
 }
