@@ -27,12 +27,17 @@ export class CatalogueComponent implements OnInit {
         }
     }
 
-    getCatalogue() {
-        this._catalogue = this.catalogueService.Catalogue();
-    }
+    // getCatalogue() {
+    //     this._catalogue = this.catalogueService.Catalogue();
+    // }
 
     public handlePokemonClicked(pokemon: PokemonShort): void {
         let currentPokemon = this.trainerService.getPokemon();
+        this._catalogue.forEach(item => {
+            if (item.name === pokemon.name) 
+                item.caught = true;
+            })
+        sessionStorage.setItem("catalogue", JSON.stringify(this._catalogue));
         currentPokemon.push({name: pokemon.name, sprite: pokemon.sprite, type: pokemon.type, deleted: false});
         this.trainerService.setPokemon(currentPokemon);
     }
