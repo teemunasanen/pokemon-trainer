@@ -13,6 +13,8 @@ import { CataloguePage } from './catalogue/catalogue.page';
 import { TrainerPage } from './trainer/trainer.page';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './components/header/header.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AppRoutingModule } from './app-routing.module';
     CataloguePage,
     CatalogueComponent,
     CatalogueItemComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    HeaderComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

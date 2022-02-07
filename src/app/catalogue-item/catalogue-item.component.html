@@ -1,19 +1,18 @@
-<div class="container">
-  <div class="card" style="width: 18rem">
-    <img class="card-img-top" src="{{ pokemon?.sprite }}" />
+
+  <div class="card">
+    <img class="mx-auto d-block" src="{{ pokemon?.sprite }}" />
     <div class="card-body">
       <li class="list-group-item">
-        <h5 class="card-title">
-          <span>{{ pokemon?.name }}</span>
-        </h5>
-        <p class="card-text">
-          <span><br />{{ pokemon?.type }}</span>
+        <h3 class="card-title">
+          <span style="white-space: nowrap;">{{ pokemon?.name }}</span>
+        </h3>
+        <p class="card-text">Type: 
+          <span>{{ pokemon?.type }}</span>
         </p>
-        <button class="btn btn-primary" (click)="onPokemonClicked()">
+        <button class="btn btn-danger" (click)="onPokemonClicked()">
           Catch!
         </button>
       </li>
     </div>
   </div>
-</div>
-<div class="item-backdrop"></div>
+
