@@ -1,7 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { map, mergeMap } from "rxjs";
+import { mergeMap } from "rxjs";
 import { PokemonShort, PokemonListObject, PokemonRaw } from "../models/pokemon-list.model";
+import { TrainerService } from "./trainer.service";
 
 @Injectable({
     providedIn: 'root'
@@ -9,7 +10,7 @@ import { PokemonShort, PokemonListObject, PokemonRaw } from "../models/pokemon-l
 export class CatalogueService {
     private _catalogue: PokemonShort[] = [];
 
-    constructor(private readonly http: HttpClient) {
+    constructor(private readonly http: HttpClient, private readonly trainerService: TrainerService) {
     }
 
     public fetchCatalogue(numOfPokemons: number): void {
@@ -19,11 +20,12 @@ export class CatalogueService {
                 next: (object) => {
                     object.subscribe({
                         next: (result) => {
+                            const isCaught = this.trainerService.pokemons.some(pokemon => result.name === pokemon.name);
                             const newPokemon: PokemonShort = {
                                 name: result.name,
                                 sprite: result.sprites.versions["generation-vii"]["ultra-sun-ultra-moon"].front_default,
                                 type: result.types[0].type.name,
-                                caught: false
+                                caught: isCaught
                             };
                             this._catalogue.push(newPokemon);
                             sessionStorage.setItem("catalogue", JSON.stringify(this._catalogue));

@@ -19,7 +19,7 @@ constructor(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    if (this.trainerService.trainer !== "") {
+    if (this.trainerService.trainer.username) {
       return true;
     }
     else {
