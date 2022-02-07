@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" *ngIf="!pokemon?.deleted">
     <img class="mx-auto d-block" src="{{ pokemon?.sprite }}" />
     <div class="card-body">
       <li class="list-group-item">
