@@ -46,8 +46,8 @@ export class TrainerService {
   }
 
   public logOut(): void {
-    localStorage.clear;
-    sessionStorage.clear;
+    localStorage.clear();
+    sessionStorage.clear();
     this.router.navigateByUrl("/");
   }
 
@@ -96,4 +96,6 @@ export class TrainerService {
     })
 
   }
+
+
 }

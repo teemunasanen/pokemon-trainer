@@ -1,5 +1,13 @@
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <h3>NAVBAR</h3>
+    <ng-container *ngIf="!username">
+      <h5>Login</h5>
+    </ng-container>
+    <ng-container *ngIf="username">
+      <h5>Welcome {{ username }}</h5>
+      <a routerLink="/trainer">Trainer</a>
+      <a routerLink="/catalogue">Catalogue</a>
+      <button *ngIf="username" (click)="onLogout()">Logout</button>
+    </ng-container>
   </div>
 </nav>
