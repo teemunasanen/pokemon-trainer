@@ -20,13 +20,6 @@ export class CatalogueComponent implements OnInit {
         if (storedCatalogue === null) {
             this.catalogueService.fetchCatalogue(151);
             this._catalogue = this.catalogueService.Catalogue();
-            // console.log(this.trainerService.pokemons)
-            // this._catalogue.forEach(pokemon => {
-            //     for (const caught of this.trainerService.pokemons) { 
-            //         if (pokemon.name === caught.name)
-            //             pokemon.caught = true;
-            // }})
-            // console.log(this._catalogue)
         }
         else 
         {
@@ -34,10 +27,6 @@ export class CatalogueComponent implements OnInit {
         }
         
     }
-
-    // getCatalogue() {
-    //     this._catalogue = this.catalogueService.Catalogue();
-    // }
 
     public handlePokemonClicked(pokemon: PokemonShort): void {
         if (!pokemon.caught) {

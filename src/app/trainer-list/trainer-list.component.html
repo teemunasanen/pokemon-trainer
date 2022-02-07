@@ -1,5 +1,8 @@
-<ul>
-    <li>
-        <h1>Trainer List Item</h1>
-    </li>
-</ul>
+<div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
+    <app-trainer-list-item
+      *ngFor="let pokemon of _caughtPokemons"
+      (clicked)="handlePokemonClicked($event)"
+      [pokemon]="pokemon"
+    >
+    </app-trainer-list-item>
+  </div>
