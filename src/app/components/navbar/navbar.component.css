@@ -17,6 +17,10 @@ color: white;
 .nav-link:hover{
 color: grey;
 }
+
 h5{
-    margin:0;
+    margin-bottom:0;
+}
+.container-fluid{
+    margin-left: 3%;
 }

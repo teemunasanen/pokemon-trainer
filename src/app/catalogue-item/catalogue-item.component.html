@@ -12,6 +12,9 @@
         <button *ngIf="!pokemon?.caught" class="btn btn-danger" (click)="onPokemonClicked()">
           Catch!
         </button>
+        <button *ngIf="pokemon?.caught" class="btn btn-secondary" disabled>
+          Catched!
+        </button>
       </li>
     </div>
   </div>
