@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { PokemonShort } from "../models/pokemon-list.model";
 import { TrainerPokemon } from "../models/trainer-pokemon-model";
+import { Trainer } from "../models/trainer.model";
 import { CatalogueService } from "../services/catalogue.service";
 import { TrainerService } from "../services/trainer.service";
 
@@ -14,10 +15,12 @@ export class TrainerListComponent implements OnInit {
         private readonly catalogueService: CatalogueService) { }
 
     _caughtPokemons: TrainerPokemon[] = []
+    _displayPokemons: TrainerPokemon[] = []
 
     ngOnInit() {
-        const trainer = JSON.parse(localStorage.getItem("trainer") || "{}");
+        const trainer: Trainer = JSON.parse(localStorage.getItem("trainer") || "{}");
         this._caughtPokemons = trainer.pokemon;
+        this._displayPokemons = trainer.pokemon.filter(pokemon => pokemon.deleted === false);
     }
 
     public handlePokemonClicked(pokemon: TrainerPokemon): void {
