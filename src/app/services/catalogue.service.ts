@@ -23,7 +23,7 @@ export class CatalogueService {
                             const isCaught = this.trainerService.pokemons.some(pokemon => result.name === pokemon.name && pokemon.deleted === false);
                             const newPokemon: PokemonShort = {
                                 name: result.name,
-                                sprite: result.sprites.versions["generation-vii"]["ultra-sun-ultra-moon"].front_default,
+                                sprite: result.sprites.front_default,
                                 type: result.types[0].type.name,
                                 caught: isCaught
                             };

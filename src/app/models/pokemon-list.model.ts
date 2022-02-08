@@ -24,18 +24,6 @@ export interface PokemonShort {
 }
 
 export interface Sprites {
-    versions: Versions;
- }
-
- export interface Versions {
-    "generation-vii": Generation_vii;
- }
-
- export interface Generation_vii {
-    "ultra-sun-ultra-moon": SunMoon;
- }
-
- export interface SunMoon {
     front_default: string;
  }
 
