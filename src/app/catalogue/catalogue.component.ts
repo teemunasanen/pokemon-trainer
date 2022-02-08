@@ -21,8 +21,7 @@ export class CatalogueComponent implements OnInit {
             this.catalogueService.fetchCatalogue(151);
             this._catalogue = this.catalogueService.Catalogue();
         }
-        else 
-        {
+        else {
             this._catalogue = JSON.parse(storedCatalogue);
         }
     }
@@ -32,13 +31,13 @@ export class CatalogueComponent implements OnInit {
         if (!pokemon.caught) {
             let currentPokemons = this.trainerService.pokemons;
             this._catalogue.forEach(item => {
-                if (item.name === pokemon.name) 
-                item.caught = true;
+                if (item.name === pokemon.name)
+                    item.caught = true;
             })
 
             // update catalogue to session storage and api
             sessionStorage.setItem("catalogue", JSON.stringify(this._catalogue));
-            currentPokemons.push({name: pokemon.name, sprite: pokemon.sprite, type: pokemon.type, deleted: false});
+            currentPokemons.push({ name: pokemon.name, sprite: pokemon.sprite, type: pokemon.type, deleted: false });
             this.trainerService.setPokemon(currentPokemons);
         }
     }

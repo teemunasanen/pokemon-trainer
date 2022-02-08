@@ -7,7 +7,14 @@
       <h5>Welcome {{ username }}</h5>
       <a class="nav-link" routerLink="/trainer">Trainer</a>
       <a class="nav-link" routerLink="/catalogue">Catalogue</a>
-      <button id="buttonLogout" class="btn btn-light" *ngIf="username" (click)="onLogout()">Logout</button>
+      <button
+        id="buttonLogout"
+        class="btn btn-light"
+        *ngIf="username"
+        (click)="onLogout()"
+      >
+        Logout
+      </button>
     </ng-container>
   </div>
 </nav>

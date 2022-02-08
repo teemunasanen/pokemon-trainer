@@ -12,7 +12,7 @@ export class CatalogueService {
 
     constructor(private readonly http: HttpClient, private readonly trainerService: TrainerService) {
     }
-
+    // Get pokemons from API. Limited number of pokemons returned on one request.
     public fetchCatalogue(numOfPokemons: number): void {
         this.http.get<PokemonListObject>('https://pokeapi.co/api/v2/pokemon?limit=' + numOfPokemons)
             .pipe(mergeMap(response => response.results.map(results => this.http.get<PokemonRaw>(results.url))))

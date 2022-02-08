@@ -6,8 +6,8 @@ import { LandingPage } from './landing/landing.page';
 import { TrainerPage } from './trainer/trainer.page';
 
 // Landing page
-// Pokémon Catalogue page
-// Trainer page
+// Pokémon Catalogue - AuthGuard
+// Trainer page - AuthGuard
 
 const routes: Routes = [
   {
@@ -16,14 +16,14 @@ const routes: Routes = [
     redirectTo: '/landing'
   },
   {
-      path: 'trainer',
-      component: TrainerPage,
-      canActivate: [ AuthGuard ]
+    path: 'trainer',
+    component: TrainerPage,
+    canActivate: [AuthGuard]
   },
   {
     path: 'catalogue',
     component: CataloguePage,
-    canActivate: [ AuthGuard ]
+    canActivate: [AuthGuard]
   },
   {
     path: 'landing',

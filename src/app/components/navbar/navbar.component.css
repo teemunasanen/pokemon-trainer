@@ -1,27 +1,27 @@
 nav {
-    background-color: black;
-    color: white;
-    padding-top: 3%;
+  background-color: black;
+  color: white;
+  padding-top: 3%;
 }
 
-#buttonLogout:hover{
-background-color: grey;
-border-color: black;
+#buttonLogout:hover {
+  background-color: grey;
+  border-color: black;
 }
 
-.nav-link{
-font-size: large;
-color: white;
+.nav-link {
+  font-size: large;
+  color: white;
 }
 
-.nav-link:hover{
-color: grey;
+.nav-link:hover {
+  color: grey;
 }
 
-h5{
-    margin-bottom:0;
-    color: yellow;
+h5 {
+  margin-bottom: 0;
+  color: yellow;
 }
-.container-fluid{
-    margin-left: 3%;
+.container-fluid {
+  margin-left: 3%;
 }

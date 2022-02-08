@@ -14,7 +14,6 @@ const headers = { "content-type": "application/json", "X-API-Key": API_KEY }
   providedIn: 'root'
 })
 export class TrainerService {
-
   private _trainer: Trainer = JSON.parse(localStorage.getItem(TRAINER_KEY) || "{}");
 
   get username(): string {
@@ -28,7 +27,7 @@ export class TrainerService {
   get pokemons(): TrainerPokemon[] {
     return this._trainer.pokemon;
   }
-
+  // Add pokemons to Trainer -> store in localstorage
   public setPokemon(pokemon: TrainerPokemon[]) {
     this.updatePokemon(pokemon);
     this._trainer = { id: this._trainer.id, username: this._trainer.username, pokemon: pokemon };
@@ -44,13 +43,13 @@ export class TrainerService {
 
     }
   }
-
+  // Clear storages on logout
   public logOut(): void {
     localStorage.clear();
     sessionStorage.clear();
     location.reload();
   }
-
+  // Login: get trainers and store user logging in
   public fetchTrainers(username: string): void {
     this.http.get<Trainer[]>(URL)
       .subscribe({
@@ -63,14 +62,14 @@ export class TrainerService {
               return
             }
           }
-          this.createNewTrainer(username.toLowerCase());
+          this.createNewTrainer(username.toLowerCase()); // New trainer
         },
         error: (error) => {
           console.log(error.message);
         }
       })
   }
-
+  // If new trainer -> create
   public createNewTrainer(username: string): void {
     const body = { "username": username, "pokemon": [] }
 

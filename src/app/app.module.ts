@@ -8,15 +8,15 @@ import { CatalogueComponent } from './catalogue/catalogue.component';
 import { TrainerListComponent } from './trainer-list/trainer-list.component';
 import { CatalogueItemComponent } from './catalogue-item/catalogue-item.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { TrainerListItemComponent } from './trainer-list-item/trainer-list-item.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { LandingPage } from './landing/landing.page';
 import { CataloguePage } from './catalogue/catalogue.page';
 import { TrainerPage } from './trainer/trainer.page';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent } from './components/header/header.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { TrainerListItemComponent } from './trainer-list-item/trainer-list-item.component';
-import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
