@@ -1,0 +1,13 @@
+.card-img-top {
+  width: 150px;
+}
+
+.card {
+  background-color: black;
+  max-width: 240px;
+  min-width: 220px;
+}
+
+.list-group-item {
+  background-color: rgb(225, 127, 250);
+}

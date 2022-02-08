@@ -1,0 +1,45 @@
+<div class="container">
+  <form #loginForm="ngForm" (ngSubmit)="onLoginSubmit(loginForm)">
+    <fieldset>
+      <label for="trainer" class="form-label">Trainer name: </label>
+      <input
+        type="text"
+        [ngClass]="{
+          'is-valid': trainer.valid,
+          'is-invalid': trainer.invalid && (trainer.dirty || trainer.touched)
+        }"
+        id="trainer"
+        name="trainer"
+        ngModel
+        #trainer="ngModel"
+        class="form-control"
+        required
+        minlength="3"
+        placeholder="Pokémon Catcher"
+      />
+      
+      <div
+        id="trainerNameErrors"
+        *ngIf="
+          trainer.errors &&
+          trainer.invalid &&
+          (trainer.dirty || trainer.touched)
+        "
+      >
+        <p *ngIf="trainer.errors?.['required']">The trainer name is required</p>
+        <p *ngIf="trainer.errors?.['minlength']">
+          The trainer name minimum length is 3
+        </p>
+      </div>
+    </fieldset>
+    <br />
+    <button
+      id="buttonSubmit"
+      class="btn btn-dark"
+      type="submit"
+      [disabled]="loginForm.invalid"
+    >
+      Login
+    </button>
+  </form>
+</div>
