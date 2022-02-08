@@ -1,0 +1,13 @@
+.footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding-top: 1%;
+    padding-left: 2%;
+    background-color: yellow;
+    border-top: 0.5rem solid black;
+}
+
+a{
+    color: black;
+}
