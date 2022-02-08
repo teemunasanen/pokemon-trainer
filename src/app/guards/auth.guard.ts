@@ -8,12 +8,10 @@ import { TrainerService } from '../services/trainer.service';
 })
 export class AuthGuard implements CanActivate {
 
-constructor(
-  private trainerService: TrainerService,
-  private router: Router
-) {
-
-}
+  constructor(
+    private trainerService: TrainerService,
+    private router: Router
+  ) { }
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -26,7 +24,5 @@ constructor(
       this.router.navigateByUrl("/");
       return false;
     }
-
   }
-
 }

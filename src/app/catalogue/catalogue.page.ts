@@ -7,7 +7,7 @@ import { TrainerService } from "../services/trainer.service";
 })
 export class CataloguePage implements OnInit {
 
-    get username(): string{
+    get username(): string {
         return this.trainerService.username;
     }
 
@@ -16,8 +16,6 @@ export class CataloguePage implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        
+
     }
-
-
 }

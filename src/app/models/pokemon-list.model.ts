@@ -25,7 +25,7 @@ export interface PokemonShort {
 
 export interface Sprites {
     front_default: string;
- }
+}
 
 export interface Types {
     type: Type;
