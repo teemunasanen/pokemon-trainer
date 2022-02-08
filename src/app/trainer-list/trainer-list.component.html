@@ -1,5 +1,5 @@
+<h3 *ngIf="!_displayPokemons.length">Here you can view and delete your caught Pokemon. You haven't caught any Pokemons yet!</h3>
 <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
- 
     <app-trainer-list-item
       *ngFor="let pokemon of _displayPokemons"
       (clicked)="handlePokemonClicked($event)"
