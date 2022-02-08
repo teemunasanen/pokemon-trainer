@@ -9,7 +9,7 @@
         <p class="card-text">Type: 
           <span>{{ pokemon?.type }}</span>
         </p>
-        <button class="btn btn-danger" (click)="onPokemonClicked()">
+        <button *ngIf="!pokemon?.caught" class="btn btn-danger" (click)="onPokemonClicked()">
           Catch!
         </button>
       </li>
