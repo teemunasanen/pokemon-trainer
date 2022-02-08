@@ -6,13 +6,22 @@
 
 Noroff Java Fullstack Assignment 4 - Pokémon Trainer web app built with the Angular Framework
 
+Pokemon Trainer goals:
 
+- Login page
+- List of Pokemons: Catalogue page
+- "Catch" a pokemon
+- "Catched" pokemons in the profile page
+
+Login built with API storage, Angular router routing and Guard service, [Pokémon API](https://pokeapi.co/) used for Pokémon data that we decided to use only with the maximum results of one call.
 
 
 ## Table of Contents
 
 - [Install](#install)
 - [Usage](#usage)
+- [Component Tree](#component-tree)
+- [UI-sketch](#ui-sketch)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
 - [License](#license)
@@ -22,8 +31,15 @@ Noroff Java Fullstack Assignment 4 - Pokémon Trainer web app built with the Ang
 Clone the repository locally and run ```npm install``` inside the cloned directory.
 
 ## Usage
-
+Use [Angular-CLI](https://angular.io/cli) to
 Run ```ng serve -o``` in the same directory to start the application in your default browser.
+
+## Component-Tree
+![component-tree](./src/assets/github/component-tree.PNG)
+
+## UI-Sketch
+![ui-sketch](./src/assets/github/pokemon1.PNG)
+![ui-sketch2](./src/assets/github/pokemon2.PNG)
 
 ## Maintainers
 
