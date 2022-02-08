@@ -10,7 +10,7 @@ border-color: black;
 }
 
 .nav-link{
-    font-size: large;
+font-size: large;
 color: white;
 }
 
@@ -20,6 +20,7 @@ color: grey;
 
 h5{
     margin-bottom:0;
+    color: yellow;
 }
 .container-fluid{
     margin-left: 3%;
