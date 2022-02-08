@@ -5,9 +5,9 @@
     </ng-container>
     <ng-container *ngIf="username">
       <h5>Welcome {{ username }}</h5>
-      <a routerLink="/trainer">Trainer</a>
-      <a routerLink="/catalogue">Catalogue</a>
-      <button *ngIf="username" (click)="onLogout()">Logout</button>
+      <a class="nav-link" routerLink="/trainer">Trainer</a>
+      <a class="nav-link" routerLink="/catalogue">Catalogue</a>
+      <button id="buttonLogout" class="btn btn-light" *ngIf="username" (click)="onLogout()">Logout</button>
     </ng-container>
   </div>
 </nav>

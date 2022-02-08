@@ -3,3 +3,20 @@ nav {
     color: white;
     padding-top: 3%;
 }
+
+#buttonLogout:hover{
+background-color: grey;
+border-color: black;
+}
+
+.nav-link{
+    font-size: large;
+color: white;
+}
+
+.nav-link:hover{
+color: grey;
+}
+h5{
+    margin:0;
+}
