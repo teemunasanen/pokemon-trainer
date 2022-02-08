@@ -1,10 +1,13 @@
 # pokemon-trainer
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+[![web](https://img.shields.io/static/v1?logo=icloud&message=Online&label=web&color=success)](https://tnnb-pokemon-trainer.herokuapp.com/)
+
 
 Noroff Java Fullstack Assignment 4 - Pokémon Trainer web app built with the Angular Framework
 
-TODO: Fill out this long description.
+
+
 
 ## Table of Contents
 
@@ -27,20 +30,17 @@ TODO: Fill out this long description.
 
 ## Maintainers
 
-[@teemunasanen](https://github.com/teemunasanen)
 [@Azruim](https://github.com/Azruim)
+[@teemunasanen](https://github.com/teemunasanen)
 
 ## Contributing
-
-[@teemunasanen](https://github.com/teemunasanen)
-[@Azruim](https://github.com/Azruim)
-
+PRs accepted.
 
 Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
 ## License
 
-MIT © 2022 Teemu Näsänen & Nico Behnen
+MIT © 2022 Nico Behnen & Teemu Näsänen
 
 
 <!-- REMOVE BEFORE PUBLISHING -->
