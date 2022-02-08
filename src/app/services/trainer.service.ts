@@ -48,7 +48,8 @@ export class TrainerService {
   public logOut(): void {
     localStorage.clear();
     sessionStorage.clear();
-    this.router.navigateByUrl("/");
+    //this.router.navigateByUrl("/");
+    location.reload();
   }
 
   public fetchTrainers(username: string): void {
