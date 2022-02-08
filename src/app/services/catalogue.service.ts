@@ -20,7 +20,7 @@ export class CatalogueService {
                 next: (object) => {
                     object.subscribe({
                         next: (result) => {
-                            const isCaught = this.trainerService.pokemons.some(pokemon => result.name === pokemon.name);
+                            const isCaught = this.trainerService.pokemons.some(pokemon => result.name === pokemon.name && pokemon.deleted === false);
                             const newPokemon: PokemonShort = {
                                 name: result.name,
                                 sprite: result.sprites.versions["generation-vii"]["ultra-sun-ultra-moon"].front_default,
@@ -37,5 +37,10 @@ export class CatalogueService {
 
     public Catalogue(): PokemonShort[] {
         return this._catalogue;
+    }
+
+    public setCatalogue(catalogue: PokemonShort[]): void {
+        this._catalogue = catalogue;
+        sessionStorage.setItem("catalogue", JSON.stringify(this._catalogue));
     }
 }

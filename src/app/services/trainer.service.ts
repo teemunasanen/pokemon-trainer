@@ -48,7 +48,6 @@ export class TrainerService {
   public logOut(): void {
     localStorage.clear();
     sessionStorage.clear();
-    //this.router.navigateByUrl("/");
     location.reload();
   }
 
@@ -95,8 +94,5 @@ export class TrainerService {
         console.log(error.message);
       }
     })
-
   }
-
-
 }
